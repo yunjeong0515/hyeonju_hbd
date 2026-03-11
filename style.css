@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'Cafe24PROUP';
+    src: url('font/Cafe24PROUP.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(imgs/bg.jpg) no-repeat center center / cover;
+    overflow: hidden;
+    font-family: 'Galmuri11', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    text-align: center;
+}
+
+h1 {
+    font-size: 7vw;
+    background: linear-gradient(90deg, #DF9BFF 0%, #FF49BC 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Cafe24PROUP', sans-serif;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+#runaway-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #45E9FF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Galmuri11', sans-serif;
+    position: relative;
+    transition: all 0.1s ease;
+    z-index: 999;
+}
+.content p {
+    font-size: 2vw;
+    margin-bottom: 1vw;
+    line-height: 1.5;
+}
+
+.hd_img01 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 30vw;
+}
+.hd_img02{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 30vw;
+}
+.hd_img01 img,
+.hd_img02 img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.icon {
+  position: absolute;
+  width: 2vw;
+  z-index: 10;
+}
+.icon.heart01 {
+  left: 24%;
+  bottom: 10%;
+  width: 4vw;
+}
+.icon.heart02 {
+  left: 5%;
+  bottom: 50%;
+}
+.icon.heart03 {
+  right: 5%;
+  bottom: 50%;
+}
+.icon.day {
+  width: 14vw;
+  right: 25%;
+  bottom: 3%;
+}
+.icon img {
+  width: 100%;
+  object-fit: contain;
+}
+.heart {
+    position: fixed;
+    top: -50px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 5;
+    animation: fall linear forwards;
+}
+
+/* 떨어지는 애니메이션 */
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+.modal {
+    /* display: none; */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4 );
+    backdrop-filter: blur(5px);
+}
+
+/* 모달 박스 */
+.modal-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+    font-family: 'Galmuri11', sans-serif;
+}
+.modal-content h2 {
+    color: #FF49BC;
+}
+.gift-img {
+    width: 150px;
+    margin: 20px 0;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    background-color: #FF49BC;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Galmuri11', sans-serif;
+}
